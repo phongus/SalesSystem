@@ -2,8 +2,6 @@ package v1;
 
 import java.util.*;
 
-import javax.swing.JOptionPane;
-
 
 public class Test7_20 {
 	
@@ -84,17 +82,19 @@ public class Test7_20 {
 	
 	public static void displayOutput(double[][] s)
 	{
-		List<Double> salesPersonTotal = new ArrayList<Double>();	// Total all sales per salesperson
-		for(int counter = 0; counter < 4; counter++)
-		{
-			salesPersonTotal.add(totalRow(s,counter));
-		}
+		ArrayList<Double> salesPersonTotal = new ArrayList<Double>();
 		
-		List<Double> productTotal = new ArrayList<Double>();	//	Total all sales per product
-		for(int counter = 0; counter < 5; counter++)
-		{
-			productTotal.add(totalColumn(s,counter));
-		}
+		salesPersonTotal.add(totalRow(s,0));
+		salesPersonTotal.add(totalRow(s,1));
+		salesPersonTotal.add(totalRow(s,2));
+		salesPersonTotal.add(totalRow(s,3));
+
+		
+		double product1Total = totalColumn(s,0);
+		double product2Total = totalColumn(s,1);
+		double product3Total = totalColumn(s,2);
+		double product4Total = totalColumn(s,3);
+		double product5Total = totalColumn(s,4);
 		
 		double totalSales = 0.0;
 		
@@ -103,18 +103,16 @@ public class Test7_20 {
 			totalSales += sp;
 		}
 		
-
 		
-		String message = "                                 ";
-		message += String.format("%s%15s%15s%15s%15s%15s%n","Product 1","Product 2","Product 3","Product 4","Product 5","Total Sales");
-		message += String.format("%s%15.2f%18.2f%18.2f%18.2f%18.2f%15.2f%n","Salesperson 1",s[0][0],s[0][1],s[0][2],s[0][3],s[0][4],salesPersonTotal.get(0));
-		message += String.format("%s%15.2f%18.2f%18.2f%18.2f%18.2f%15.2f%n","Salesperson 2",s[1][0],s[1][1],s[1][2],s[1][3],s[1][4],salesPersonTotal.get(1));
-		message += String.format("%s%15.2f%18.2f%18.2f%18.2f%18.2f%15.2f%n","Salesperson 3",s[2][0],s[2][1],s[2][2],s[2][3],s[2][4],salesPersonTotal.get(2));
-		message += String.format("%s%15.2f%18.2f%18.2f%18.2f%18.2f%15.2f%n","Salesperson 4",s[3][0],s[3][1],s[3][2],s[3][3],s[3][4],salesPersonTotal.get(3));
-		message += String.format("%s%21.2f%18.2f%18.2f%18.2f%18.2f%15.2f%n","Total Sales",productTotal.get(0),productTotal.get(1),productTotal.get(2),productTotal.get(3),productTotal.get(4),totalSales);
+		System.out.print("                  ");
+		System.out.printf("%s%15s%15s%15s%15s%15s\n","Product 1","Product 2","Product 3","Product 4","Product 5","Total Sales");
+		System.out.printf("%s%11.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Salesperson 1",s[0][0],s[0][1],s[0][2],s[0][3],s[0][4],salesPersonTotal.get(0));
+		System.out.printf("%s%11.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Salesperson 2",s[1][0],s[1][1],s[1][2],s[1][3],s[1][4],salesPersonTotal.get(1));
+		System.out.printf("%s%11.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Salesperson 3",s[2][0],s[2][1],s[2][2],s[2][3],s[2][4],salesPersonTotal.get(2));
+		System.out.printf("%s%11.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Salesperson 4",s[3][0],s[3][1],s[3][2],s[3][3],s[3][4],salesPersonTotal.get(3));
+		System.out.printf("%s%13.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Total Sales",product1Total,product2Total,product3Total,product4Total,product5Total,totalSales);
 		
 		System.out.println();
-		JOptionPane.showMessageDialog(null, message);
 	}
 	
 	
