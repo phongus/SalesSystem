@@ -2,6 +2,8 @@ package v1;
 
 import java.util.*;
 
+import javax.swing.JOptionPane;
+
 
 public class Test7_20 {
 	
@@ -102,17 +104,19 @@ public class Test7_20 {
 		{
 			totalSales += sp;
 		}
+		String spg = "";
 		
-		
-		System.out.print("                  ");
-		System.out.printf("%s%15s%15s%15s%15s%15s\n","Product 1","Product 2","Product 3","Product 4","Product 5","Total Sales");
-		System.out.printf("%s%11.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Salesperson 1",s[0][0],s[0][1],s[0][2],s[0][3],s[0][4],salesPersonTotal.get(0));
-		System.out.printf("%s%11.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Salesperson 2",s[1][0],s[1][1],s[1][2],s[1][3],s[1][4],salesPersonTotal.get(1));
-		System.out.printf("%s%11.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Salesperson 3",s[2][0],s[2][1],s[2][2],s[2][3],s[2][4],salesPersonTotal.get(2));
-		System.out.printf("%s%11.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Salesperson 4",s[3][0],s[3][1],s[3][2],s[3][3],s[3][4],salesPersonTotal.get(3));
-		System.out.printf("%s%13.2f%15.2f%15.2f%15.2f%15.2f%15.2f\n","Total Sales",product1Total,product2Total,product3Total,product4Total,product5Total,totalSales);
+		spg += "                                 ";
+		spg += String.format("%s%15s%15s%15s%15s%15s\n","Product 1","Product 2","Product 3","Product 4","Product 5","Total Sales");
+		spg += String.format("%s%17.2f%18.2f%17.2f%17.2f%18.2f%18.2f\n","Salesperson 1",s[0][0],s[0][1],s[0][2],s[0][3],s[0][4],salesPersonTotal.get(0));
+		spg += String.format("%s%17.2f%18.2f%17.2f%17.2f%18.2f%18.2f\n","Salesperson 2",s[1][0],s[1][1],s[1][2],s[1][3],s[1][4],salesPersonTotal.get(1));
+		spg += String.format("%s%17.2f%18.2f%17.2f%17.2f%18.2f%18.2f\n","Salesperson 3",s[2][0],s[2][1],s[2][2],s[2][3],s[2][4],salesPersonTotal.get(2));
+		spg += String.format("%s%17.2f%18.2f%17.2f%17.2f%18.2f%18.2f\n","Salesperson 4",s[3][0],s[3][1],s[3][2],s[3][3],s[3][4],salesPersonTotal.get(3));
+		spg += String.format("%s%23.2f%18.2f%17.2f%17.2f%18.2f%17.2f\n","Total Sales",product1Total,product2Total,product3Total,product4Total,product5Total,totalSales);
 		
 		System.out.println();
+		
+		JOptionPane.showMessageDialog(null, spg,"Sales Performance graph",JOptionPane.PLAIN_MESSAGE);
 	}
 	
 	
