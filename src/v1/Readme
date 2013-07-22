@@ -15,4 +15,11 @@ Cross-total each column to get the total sales by salesperson for last month. Yo
 include these cross-totals to the right of the totaled rows and to the bottom of the totaled columns.
 
 ----------
-v1.  Do all this, and have a main method that will create the Slips, submit them, and then create a graph.
+v1 COMPLETE 7/20/2013.  Do all this, and have a main method that will create the Slips, submit them, 
+	and then create a graph.
+v2 (not really). Create a Model GUI that users can enter Slip data and then submit them into the System.  
+	The user can then click "Generate Performance Chart" to display the graph.
+	Representation:
+			titleLabel
+		salesPersonLabel	salesPersonComboBox
+		productIDLabel		productIDComboBox
