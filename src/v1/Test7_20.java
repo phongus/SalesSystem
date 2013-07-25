@@ -2,6 +2,7 @@ package v1;
 
 import java.util.*;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -12,6 +13,14 @@ public class Test7_20 {
 	
 
 	public static void main(String[] args) {
+		
+		{
+			SalesSystemGUI  ssg = new SalesSystemGUI();
+			ssg.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			ssg.setSize(500,150);
+			ssg.setVisible(true);
+			ssg.setLocationRelativeTo(null);
+		}
 		
 		sales = new double[4][5];
 		
@@ -56,7 +65,7 @@ public class Test7_20 {
 			submitSlip(sales, n);
 		
 		
-		displayOutput(sales);
+		//displayOutput(sales);
 		
 		
 		
